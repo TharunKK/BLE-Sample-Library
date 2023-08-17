@@ -43,6 +43,7 @@ import com.example.bleapp.BluetoothLeService.Companion.ACTION_GATT_SERVICES_DISC
 import com.example.bleapp.Utils.LED_BLUE
 import com.example.bleapp.Utils.LED_RED
 import com.example.bleapp.Utils.THINGY_UI_SERVICE
+import com.example.blesamplelibrary.BleActivity
 
 
 private const val ENABLE_BLUETOOTH_REQUEST_CODE = 1
@@ -203,6 +204,9 @@ class MainActivity : AppCompatActivity(), ScanAdapter.ScanListener {
                 )
             }
         }
+
+        var intent = Intent(this, BleActivity::class.java)
+        startActivity(intent)
     }
 
     private fun scanLeDevice() {
